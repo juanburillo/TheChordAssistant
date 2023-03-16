@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* Paleta de Colores */
+  --bg: #F0F0F0;
+  --col1: #C4D7F2;
+  --col2: #AFDEDC;
+  --col3: #91a8a4;
+}
+
+body {
+  font-family: 'Prompt', sans-serif;
+  background-color: var(--bg);
+}
