@@ -10,7 +10,7 @@
   --col3: #91a8a4;
 }
 
-body {
+html {
   font-family: 'Prompt', sans-serif;
   background-color: var(--bg);
 }

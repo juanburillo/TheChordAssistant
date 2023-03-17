@@ -119,10 +119,73 @@ input:checked + .slider:before {
 }
 
 #piano {
-  border: 1px solid blue;
+  border: 3px solid black;
+  border-radius: 20px;
   width: 90%;
   height: 500px;
   margin: 10px auto;
+}
+
+#white-tiles {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.white {
+  display: inline-block;
+  height: 497px;
+  border-right: 3px solid black;
+}
+
+.black {
+  display: inline;
+  height: 300px;
+  width: 50px;
+  background-color: black;
+}
+
+#one {
+  
+}
+
+#two {
+}
+
+#three {
+}
+
+#four {
+}
+
+#five {
+}
+
+#six {
+
+}
+
+#seven {
+
+}
+
+#eight {
+
+}
+
+#nine {
+
+}
+
+#ten {
+
+}
+
+#eleven {
+
+}
+
+#twelve {
+
 }
 
 #bottom-text p {
