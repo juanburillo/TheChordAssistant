@@ -1,0 +1,92 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #fff;
+	font-family: Arial, sans-serif;
+}
+
+.circles {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
+	height: 300px;
+}
+
+.circle {
+	border-radius: 50%;
+	position: absolute;
+}
+
+.circle-1 {
+    width: 400%;
+	height: 130%;
+	background-color: #90dbf4;
+	top: -70px;
+	left: -70px;
+}
+
+.circle-2 {
+    width: 325%;
+	height: 110%;
+	background-color: #8eecf5;
+	top: 180px;
+	left: 130px;
+}
+
+.circle-3 {
+    width: 200%;
+	height: 70%;
+	background-color: #98f5e1;
+	top: 400px;
+	left: 60px;
+}
+
+.content {
+	position: relative;
+	z-index: 1;
+	margin: 150px auto 0;
+    text-align: center;
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: bold;
+	color: #000;
+}
+
+p {
+	font-size: 1.1rem;
+    font-weight: bold;
+	color: #000;
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background-color: #000;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 20px 20px;
+    border: none;
+    margin-bottom: 60px;
+    cursor: pointer;
+    width: 220px;
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+	background-color: #333;
+}
