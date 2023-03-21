@@ -5,8 +5,9 @@
 }
 
 body {
-	background-color: #fff;
-	font-family: Arial, sans-serif;
+	background-color: #F0F0F0;
+	font-family: 'Prompt', sans-serif;
+	overflow: hidden;
 }
 
 .circles {
@@ -25,7 +26,7 @@ body {
 .circle-1 {
     width: 400%;
 	height: 130%;
-	background-color: #90dbf4;
+	background-color: #C4D7F2;
 	top: -70px;
 	left: -70px;
 }
@@ -33,7 +34,7 @@ body {
 .circle-2 {
     width: 325%;
 	height: 110%;
-	background-color: #8eecf5;
+	background-color: #AFDEDC;
 	top: 180px;
 	left: 130px;
 }
@@ -41,9 +42,54 @@ body {
 .circle-3 {
     width: 200%;
 	height: 70%;
-	background-color: #98f5e1;
+	background-color: #91a8a4;
 	top: 400px;
 	left: 60px;
+}
+
+.stripes {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
+	height: 300px;
+}
+
+.stripe {
+	position: absolute;
+	transform: rotate(37deg);
+}
+
+.stripe-1{
+    width: 45%;
+    height: 235%;
+    background-color: #F6D29A;
+    top: 110px;
+    left: 1145px;
+}
+
+.stripe-2{
+    width: 30%;
+    height: 235%;
+    background-color: #F0E6AE;
+    top: 120px;
+    left: 1240px;
+}
+
+.stripe-3{
+    width: 30%;
+    height: 235%;
+    background-color: #F0E0D5;
+    top: 215px;
+    left: 1240px;
+}
+
+.stripe-4{
+    width: 30%;
+    height: 235%;
+    background-color: #F1C9C9;
+    top: 390px;
+    left: 1180px;
 }
 
 .content {
@@ -65,6 +111,11 @@ p {
 	color: #000;
 	margin-top: 10px;
 	margin-bottom: 50px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
 }
 
 .buttons {
