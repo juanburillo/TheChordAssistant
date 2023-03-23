@@ -200,10 +200,20 @@ input:checked + .slider:before {
   text-align: center;
 }
 
-#bottom-text a {
+#bottom-text p {
   font-family: 'Secular One';
   font-size: 1.7rem;
-  color: black;
+  transition: all 0.3s;
+  display: inline;
+}
+
+#bottom-text p:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#bottom-text p:active {
+  opacity: 0.6;
 }
 
 #white-tiles .note-name {
