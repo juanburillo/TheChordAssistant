@@ -121,9 +121,10 @@ input:checked + .slider:before {
 #piano {
   border: 3px solid black;
   border-radius: 20px;
-  width: 90%;
+  width: 1300px;
   height: 500px;
   margin: 10px auto;
+  position: relative;
 }
 
 #white-tiles {
@@ -133,39 +134,56 @@ input:checked + .slider:before {
 
 .white {
   display: inline-block;
+  width: 130px;
   height: 497px;
   border-right: 3px solid black;
+}
+
+#last-white {
+  border-right: none;
 }
 
 .black {
   display: inline;
   height: 300px;
-  width: 50px;
+  width: 70px;
   background-color: black;
+  position: relative;
 }
 
 #one {
-  
+  position: absolute;
+  left: 95px;
 }
 
 #two {
+  position: absolute;
+  left: 225px;
 }
 
 #three {
+  position: absolute;
+  left: 352px;
 }
 
 #four {
+  position: absolute;
+  right: 615px;
 }
 
 #five {
+  position: absolute;
+  right: 485px;
 }
 
 #six {
-
+  position: absolute;
+  right: 225px;
 }
 
 #seven {
-
+  position: absolute;
+  right: 95px;
 }
 
 #eight {
