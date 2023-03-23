@@ -196,15 +196,30 @@ input:checked + .slider:before {
   right: 95px;
 }
 
-#bottom-text p {
-  font-family: 'Secular One';
-  font-size: 1.7rem;
+#bottom-text {
   text-align: center;
 }
 
-.note-name {
+#bottom-text a {
+  font-family: 'Secular One';
+  font-size: 1.7rem;
+  color: black;
+}
+
+#white-tiles .note-name {
   display: none;
   font-size: 4rem;
+  font-family: 'Secular One', sans-serif;
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+#black-tiles .note-name {
+  display: none;
+  font-size: 2rem;
+  color: white;
   font-family: 'Secular One', sans-serif;
   position: absolute;
   bottom: 40px;
