@@ -120,7 +120,6 @@ input:checked + .slider:before {
 
 #piano {
   border: 3px solid black;
-  border-radius: 20px;
   width: 1300px;
   height: 500px;
   margin: 10px auto;
@@ -137,6 +136,12 @@ input:checked + .slider:before {
   width: 130px;
   height: 497px;
   border-right: 3px solid black;
+  position: relative;
+  z-index: 10;
+}
+
+.white:hover {
+  cursor: pointer;
 }
 
 #last-white {
@@ -149,6 +154,11 @@ input:checked + .slider:before {
   width: 70px;
   background-color: black;
   position: relative;
+  z-index: 15;
+}
+
+.black:hover {
+  cursor: pointer;
 }
 
 #one {
@@ -186,28 +196,18 @@ input:checked + .slider:before {
   right: 95px;
 }
 
-#eight {
-
-}
-
-#nine {
-
-}
-
-#ten {
-
-}
-
-#eleven {
-
-}
-
-#twelve {
-
-}
-
 #bottom-text p {
   font-family: 'Secular One';
   font-size: 1.7rem;
+  text-align: center;
+}
+
+.note-name {
+  display: none;
+  font-size: 4rem;
+  font-family: 'Secular One', sans-serif;
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
   text-align: center;
 }
