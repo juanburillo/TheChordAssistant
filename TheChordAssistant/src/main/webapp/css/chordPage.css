@@ -35,6 +35,34 @@
   margin-top: 30px !important;
 }
 
-#song {
+#song iframe {
   margin: 30px 0;
+}
+
+#chord-page button {
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  display: inline;
+  background-color: black;
+  color: white; 
+  padding: 5px 20px;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+#chord-page button:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+#chord-page button:active {
+	opacity: 0.6;
+}
+
+footer {
+	display: none;
+	height: 100px;
+	background-color: black;
 }

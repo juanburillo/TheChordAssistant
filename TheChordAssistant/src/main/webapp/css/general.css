@@ -13,4 +13,5 @@
 html {
   font-family: 'Prompt', sans-serif;
   background-color: var(--bg);
+  scroll-behavior: smooth;
 }
