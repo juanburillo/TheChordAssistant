@@ -1,0 +1,21 @@
+#chord-page {
+  /* display: none; */
+  margin-top: 20px;
+  text-align: center;
+}
+
+#chord-page h1 {
+  font-size: 5rem;
+  font-family: 'Unbounded', sans-serif;
+}
+
+#chord-description {
+  font-family: 'Prompt', sans-serif;
+  width: 80%;
+  font-size: 2rem;
+  margin: auto;
+}
+
+#chord-page h2 {
+  font-size: 2.6rem;
+}

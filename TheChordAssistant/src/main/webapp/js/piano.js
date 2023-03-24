@@ -1,13 +1,14 @@
-// TODO
-function printData(data) {
-
+// Función que genera una página dinámica dependiendo del acorde introducido
+function generateChordPage(data) {
+  let chordPage = document.querySelector("#chordPage");
+  chordPage.style.display = "block";
 }
 
-// TODO
+// Función que realiza una petición ajax y pasa a la función "printData()" un JSON
 function ajax(url) {
   fetch(url)
   .then(data => data.json())
-  .then(data => printData(data));
+  .then(data => generateChordPage(data));
 }
 
 /**
