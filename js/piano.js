@@ -1,5 +1,4 @@
 function processChord(tiles) {
-  console.log("hola");
   let chordCombination = "";
   for (let i = 0; i < tiles.length; i++) {
     if (tiles[i]) {
@@ -8,8 +7,6 @@ function processChord(tiles) {
   }
 
   chordCombination = chordCombination.slice(0, -1);
-
-  console.log(chordCombination);
 }
 
 function highlightWhiteKey(key, isSelected, sound) {
@@ -155,9 +152,37 @@ window.onload = function () {
   });
 
   let chordButton = document.querySelector("#chordButton");
-
   chordButton.addEventListener("click", function() {
     processChord(selectedTiles);
+  });
+
+  let resetButton = document.querySelector("#resetButton");
+  resetButton.addEventListener("click", function() {
+    for(let i = 0; i < whiteTiles.length; i++) {
+      whiteTiles[i].style.boxShadow = "none";
+    }
+    for(let i = 0; i < blackTiles.length; i++) {
+      blackTiles[i].style.backgroundColor = "black";
+    }
+    for(let i = 0; i < selectedTiles.length; i++) {
+      selectedTiles[i] = false;
+    }
+  });
+
+  let volumeButton = document.querySelector("#volumeButton");
+  volumeButton.addEventListener("click", function() {
+    console.log(volumeButton.src.search("on.svg"));
+    if (volumeButton.src.search("on.svg") == -1) {
+      volumeButton.src = "../img/icons/volume-on.svg";
+      for(let i = 0; i < tileSounds.length; i++) {
+        tileSounds[i].muted = false;
+      }
+    } else {
+      volumeButton.src = "../img/icons/volume-off.svg";
+      for(let i = 0; i < tileSounds.length; i++) {
+        tileSounds[i].muted = true;
+      }
+    }
   });
 
 };

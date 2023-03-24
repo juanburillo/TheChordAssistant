@@ -196,11 +196,13 @@ input:checked + .slider:before {
   right: 95px;
 }
 
-#bottom-button {
+#bottom-buttons {
   text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
-#bottom-button button {
+#bottom-buttons button {
   font-family: 'Prompt', sans-serif;
   font-size: 1.1rem;
   transition: all 0.3s;
@@ -212,12 +214,18 @@ input:checked + .slider:before {
   border-radius: 20px;
 }
 
-#bottom-button button:hover {
+#bottom-buttons img {
+  height: 2rem;
+}
+
+#bottom-buttons button:hover,
+#bottom-buttons img:hover {
   cursor: pointer;
   opacity: 0.8;
 }
 
-#bottom-button button:active {
+#bottom-buttons button:active,
+#bottom-buttons img:active {
   opacity: 0.6;
 }
 
