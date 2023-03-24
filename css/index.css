@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body {
   overflow: hidden;
 }
@@ -108,6 +112,7 @@ p {
 
 #desc {
   font-family: 'Prompt', sans-serif;
+  letter-spacing: 16%;
 }
 
 a {
@@ -126,7 +131,7 @@ a {
   background-color: #000;
   color: #fff;
   font-size: 0.7rem;
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Secular One', sans-serif;
   padding: 20px 20px;
   border: none;
   margin-bottom: 60px;
@@ -142,4 +147,20 @@ a {
 
 .btn:active {
   opacity: 0.6;
+}
+
+/* Responsive */
+@media only screen and (min-width: 1200px) {
+  * {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    letter-spacing: 0.09rem;
+  }
+
+  .stripes {
+    left: 170px;
+    transform: scale(1.05);
+  }
 }
