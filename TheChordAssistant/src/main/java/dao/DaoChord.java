@@ -37,7 +37,7 @@ public class DaoChord {
 				result = new ArrayList<>();
 			}
 			if (nameFilter == null || rs.getString("name").equals(nameFilter)) {
-				result.add(new Chord(rs.getInt("id"), rs.getString("name"), rs.getString("quality"), rs.getString("description"), rs.getString("fundamentalImage"), rs.getString("firstInversionImage"), rs.getString("secondInversionImage"), rs.getString("featuredSong")));
+				result.add(new Chord(rs.getInt("id"), rs.getString("name"), rs.getString("quality"), rs.getString("description"), rs.getString("image"), rs.getString("featuredSong")));
 			}
 		}
 

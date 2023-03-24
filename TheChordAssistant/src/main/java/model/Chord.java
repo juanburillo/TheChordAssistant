@@ -7,9 +7,7 @@ public class Chord {
 	private String name;
 	private String quality;
 	private String description;
-	private String fundamentalImage;
-	private String firstInversionImage;
-	private String secondInversionImage;
+	private String image;
 	private String featuredSong;
 
 	// Constructors
@@ -28,14 +26,12 @@ public class Chord {
 		this.quality = quality;
 	}
 
-	public Chord(int id, String name, String quality, String description, String fundamentalImage, String firstInversionImage, String secondInversionImage, String featuredSong) {
+	public Chord(int id, String name, String quality, String description, String image, String featuredSong) {
 		this.id = id;
 		this.name = name;
 		this.quality = quality;
 		this.description = description;
-		this.fundamentalImage = fundamentalImage;
-		this.firstInversionImage = firstInversionImage;
-		this.secondInversionImage = secondInversionImage;
+		this.image = image;
 		this.featuredSong = featuredSong;
 	}
 
@@ -64,28 +60,12 @@ public class Chord {
 		this.quality = quality;
 	}
 
-	public String getFundamentalImage() {
-		return fundamentalImage;
+	public String getImage() {
+		return image;
 	}
 
-	public void setFundamentalImage(String fundamentalImage) {
-		this.fundamentalImage = fundamentalImage;
-	}
-
-	public String getFirstInversionImage() {
-		return firstInversionImage;
-	}
-
-	public void setFirstInversionImage(String firstInversionImage) {
-		this.firstInversionImage = firstInversionImage;
-	}
-
-	public String getSecondInversionImage() {
-		return secondInversionImage;
-	}
-
-	public void setSecondInversionImage(String secondInversionImage) {
-		this.secondInversionImage = secondInversionImage;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public String getFeaturedSong() {
