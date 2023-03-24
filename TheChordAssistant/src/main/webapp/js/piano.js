@@ -1,3 +1,15 @@
+// TODO
+function printData(data) {
+
+}
+
+// TODO
+function ajax(url) {
+  fetch(url)
+  .then(data => data.json())
+  .then(data => printData(data));
+}
+
 /**
  * Función que, según la combinación de teclas del piano que se le pase por parámetro,
  * TODO
@@ -6,55 +18,55 @@
  */
 function getChord(num) {
   if(num == "0_4_7" || num == "4_7_12" || num == "0_7_16") {
-    window.alert("F"); // F
+    window.location.href = "List?name=" + "F"; // F
   } else if(num == "0_3_7" || num == "3_7_12" || num == "7_12_15" || num == "0_7_15") {
-    window.alert("Fm"); // Fm
+    window.location.href = "List?name=" + "Fm"; // Fm
   } else if(num == "1_5_8" || num == "5_8_13") {
-    window.alert("F#"); // F#
+    window.location.href = "List?name=" + "F# / Gb"; // F#
   } else if(num == "1_4_8" || num == "4_8_13" || num == "1_8_16" || num == "8_13_16") {
-    window.alert("F#m"); // F#m
+    window.location.href = "List?name=" + "F#m / Gbm"; // F#m
   } else if(num == "2_6_9" || num == "6_9_14") {
-    window.alert("G"); // G
+    window.location.href = "List?name=" + "G"; // G
   } else if(num == "2_5_9" || num == "5_9_14") {
-    window.alert("Gm"); // Gm
+    window.location.href = "List?name=" + "Gm"; // Gm
   } else if(num == "3_7_10" || num == "7_10_15") {
-    window.alert("G#"); // G#
+    window.location.href = "List?name=" + "G# / Ab"; // G#
   } else if(num == "3_6_10" || num == "6_10_15") {
-    window.alert("G#m"); // G#m
+    window.location.href = "List?name=" + "G#m / Abm"; // G#m
   } else if(num == "4_8_11" || num == "8_11_16") {
-    window.alert("A"); // A
+    window.location.href = "List?name=" + "A"; // A
   } else if(num == "4_7_11" || num == "7_11_16") {
-    window.alert("Am"); // Am
+    window.location.href = "List?name=" + "Am"; // Am
   } else if(num == "5_9_12" || num == "0_5_9") {
-    window.alert("A#"); // A#
+    window.location.href = "List?name=" + "A# / Bb"; // A#
   } else if(num == "5_8_12" || num == "0_5_8") {
-    window.alert("A#m"); // A#m
+    window.location.href = "List?name=" + "A#m / Bbm"; // A#m
   } else if(num == "6_10_13" || num == "1_6_10") {
-    window.alert("B"); // B
+    window.location.href = "List?name=" + "B"; // B
   } else if(num == "6_9_13" || num == "1_6_9") {
-    window.alert("Bm"); // Bm
+    window.location.href = "List?name=" + "Bm"; // Bm
   } else if(num == "7_11_14" || num == "2_7_11") {
-    window.alert("C"); // C
+    window.location.href = "List?name=" + "C"; // C
   } else if(num == "7_10_14" || num == "2_7_10") {
-    window.alert("Cm"); // Cm
+    window.location.href = "List?name=" + "Cm"; // Cm
   } else if(num == "8_12_15" || num == "0_8_15" || num == "3_8_12" || num == "0_3_8") {
-    window.alert("C#"); // C#
+    window.location.href = "List?name=" + "C# / Db"; // C#
   } else if(num == "8_11_15" || num == "3_8_11") {
-    window.alert("C#m"); // C#m
+    window.location.href = "List?name=" + "C#m / Dbm"; // C#m
   } else if(num == "9_13_16" || num == "4_9_13" || num == "1_4_9" || num == "1_9_16") {
-    window.alert("D"); // D
+    window.location.href = "List?name=" + "D"; // D
   } else if(num == "9_12_16" || num == "4_9_12" || num == "0_4_9" || num == "0_9_16") {
-    window.alert("Dm"); // Dm
+    window.location.href = "List?name=" + "Dm"; // Dm
   } else if(num == "5_10_14" || num == "2_5_10") {
-    window.alert("D#"); // D#
+    window.location.href = "List?name=" + "D# / Eb"; // D#
   } else if(num == "5_10_13" || num == "1_5_10") {
-    window.alert("D#m"); // D#m
+    window.location.href = "List?name=" + "D#m / Ebm"; // D#m
   } else if(num == "6_11_15" || num == "3_6_11") {
-    window.alert("E"); // E
+    window.location.href = "List?name=" + "E"; // E
   } else if(num == "2_6_11" || num == "6_11_14") {
-    window.alert("Em"); // Em
+    window.location.href = "List?name=" + "Em"; // Em
   } else {
-    window.alert("ACORDE NO RECONOCIDO") // Else
+    window.alert("Acorde no reconocido...\nPrueba con una triada mayor o menor.") // Else
   }
 }
 
@@ -128,23 +140,23 @@ function highlightBlackKey(key, isSelected, sound) {
  * @returns el array cargado
  */
 function loadSounds(tiles) {
-  tiles[0] = new Audio("../audio/F2.mp3");
-  tiles[1] = new Audio("../audio/Gb2.mp3");
-  tiles[2] = new Audio("../audio/G2.mp3");
-  tiles[3] = new Audio("../audio/Ab2.mp3");
-  tiles[4] = new Audio("../audio/A2.mp3");
-  tiles[5] = new Audio("../audio/Bb2.mp3");
-  tiles[6] = new Audio("../audio/B2.mp3");
-  tiles[7] = new Audio("../audio/C3.mp3");
-  tiles[8] = new Audio("../audio/Db3.mp3");
-  tiles[9] = new Audio("../audio/D3.mp3");
-  tiles[10] = new Audio("../audio/Eb3.mp3");
-  tiles[11] = new Audio("../audio/E3.mp3");
-  tiles[12] = new Audio("../audio/F3.mp3");
-  tiles[13] = new Audio("../audio/Gb3.mp3");
-  tiles[14] = new Audio("../audio/G3.mp3");
-  tiles[15] = new Audio("../audio/Ab3.mp3");
-  tiles[16] = new Audio("../audio/A3.mp3");
+  tiles[0] = new Audio("./resources/audio/F2.mp3");
+  tiles[1] = new Audio("./resources/audio/Gb2.mp3");
+  tiles[2] = new Audio("./resources/audio/G2.mp3");
+  tiles[3] = new Audio("./resources/audio/Ab2.mp3");
+  tiles[4] = new Audio("./resources/audio/A2.mp3");
+  tiles[5] = new Audio("./resources/audio/Bb2.mp3");
+  tiles[6] = new Audio("./resources/audio/B2.mp3");
+  tiles[7] = new Audio("./resources/audio/C3.mp3");
+  tiles[8] = new Audio("./resources/audio/Db3.mp3");
+  tiles[9] = new Audio("./resources/audio/D3.mp3");
+  tiles[10] = new Audio("./resources/audio/Eb3.mp3");
+  tiles[11] = new Audio("./resources/audio/E3.mp3");
+  tiles[12] = new Audio("./resources/audio/F3.mp3");
+  tiles[13] = new Audio("./resources/audio/Gb3.mp3");
+  tiles[14] = new Audio("./resources/audio/G3.mp3");
+  tiles[15] = new Audio("./resources/audio/Ab3.mp3");
+  tiles[16] = new Audio("./resources/audio/A3.mp3");
   return tiles;
 }
 
@@ -276,12 +288,12 @@ window.onload = function () {
   volumeButton.addEventListener("click", function() {
     console.log(volumeButton.src.search("on.svg"));
     if (volumeButton.src.search("on.svg") == -1) {
-      volumeButton.src = "../img/icons/volume-on.svg";
+      volumeButton.src = "./resources/img/icons/volume-on.svg";
       for(let i = 0; i < tileSounds.length; i++) {
         tileSounds[i].muted = false;
       }
     } else {
-      volumeButton.src = "../img/icons/volume-off.svg";
+      volumeButton.src = "./resources/img/icons/volume-off.svg";
       for(let i = 0; i < tileSounds.length; i++) {
         tileSounds[i].muted = true;
       }
