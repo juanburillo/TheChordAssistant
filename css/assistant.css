@@ -196,23 +196,28 @@ input:checked + .slider:before {
   right: 95px;
 }
 
-#bottom-text {
+#bottom-button {
   text-align: center;
 }
 
-#bottom-text p {
-  font-family: 'Secular One';
-  font-size: 1.7rem;
+#bottom-button button {
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.1rem;
   transition: all 0.3s;
   display: inline;
+  background-color: black;
+  color: white; 
+  padding: 5px 20px;
+  border: none;
+  border-radius: 20px;
 }
 
-#bottom-text p:hover {
+#bottom-button button:hover {
   cursor: pointer;
   opacity: 0.8;
 }
 
-#bottom-text p:active {
+#bottom-button button:active {
   opacity: 0.6;
 }
 
