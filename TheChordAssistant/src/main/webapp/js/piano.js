@@ -3,7 +3,7 @@ function generateChordPage(data) {
   let chordPage = document.querySelector("#chord-page");
   chordPage.style.display = "block";
   let footer = document.querySelector("footer");
-  footer.style.display = "block";
+  footer.style.display = "flex";
 
   let description = document.querySelector("#chord-description")
 
