@@ -1,14 +1,93 @@
+/**
+ * Función que, según la combinación de teclas del piano que se le pase por parámetro,
+ * TODO
+ * @param num (número con la combinación de teclas. Por ejemplo, "0_1_2" significa que
+ * las tres primeras teclas han sido seleccionadas) 
+ */
+function getChord(num) {
+  if(num == "0_4_7" || num == "4_7_12" || num == "0_7_16") {
+    window.alert("F"); // F
+  } else if(num == "0_3_7" || num == "3_7_12" || num == "7_12_15" || num == "0_7_15") {
+    window.alert("Fm"); // Fm
+  } else if(num == "1_5_8" || num == "5_8_13") {
+    window.alert("F#"); // F#
+  } else if(num == "1_4_8" || num == "4_8_13" || num == "1_8_16" || num == "8_13_16") {
+    window.alert("F#m"); // F#m
+  } else if(num == "2_6_9" || num == "6_9_14") {
+    window.alert("G"); // G
+  } else if(num == "2_5_9" || num == "5_9_14") {
+    window.alert("Gm"); // Gm
+  } else if(num == "3_7_10" || num == "7_10_15") {
+    window.alert("G#"); // G#
+  } else if(num == "3_6_10" || num == "6_10_15") {
+    window.alert("G#m"); // G#m
+  } else if(num == "4_8_11" || num == "8_11_16") {
+    window.alert("A"); // A
+  } else if(num == "4_7_11" || num == "7_11_16") {
+    window.alert("Am"); // Am
+  } else if(num == "5_9_12" || num == "0_5_9") {
+    window.alert("A#"); // A#
+  } else if(num == "5_8_12" || num == "0_5_8") {
+    window.alert("A#m"); // A#m
+  } else if(num == "6_10_13" || num == "1_6_10") {
+    window.alert("B"); // B
+  } else if(num == "6_9_13" || num == "1_6_9") {
+    window.alert("Bm"); // Bm
+  } else if(num == "7_11_14" || num == "2_7_11") {
+    window.alert("C"); // C
+  } else if(num == "7_10_14" || num == "2_7_10") {
+    window.alert("Cm"); // Cm
+  } else if(num == "8_12_15" || num == "0_8_15" || num == "3_8_12" || num == "0_3_8") {
+    window.alert("C#"); // C#
+  } else if(num == "8_11_15" || num == "3_8_11") {
+    window.alert("C#m"); // C#m
+  } else if(num == "9_13_16" || num == "4_9_13" || num == "1_4_9" || num == "1_9_16") {
+    window.alert("D"); // D
+  } else if(num == "9_12_16" || num == "4_9_12" || num == "0_4_9" || num == "0_9_16") {
+    window.alert("Dm"); // Dm
+  } else if(num == "5_10_14" || num == "2_5_10") {
+    window.alert("D#"); // D#
+  } else if(num == "5_10_13" || num == "1_5_10") {
+    window.alert("D#m"); // D#m
+  } else if(num == "6_11_15" || num == "3_6_11") {
+    window.alert("E"); // E
+  } else if(num == "2_6_11" || num == "6_11_14") {
+    window.alert("Em"); // Em
+  } else {
+    window.alert("ACORDE NO RECONOCIDO") // Else
+  }
+}
+
+/**
+ * Función que crea una cadena de texto según la combinación de teclas
+ * seleccionadas al pulsar el botón principal del asistente.
+ * @param tiles (array de teclas con valores booleanos que indican si están
+ * seleccionadas o no)
+ */
 function processChord(tiles) {
   let chordCombination = "";
+  let noNotesSelected = true; 
   for (let i = 0; i < tiles.length; i++) {
     if (tiles[i]) {
       chordCombination += i + "_";
+      noNotesSelected = false;
     }
   }
 
-  chordCombination = chordCombination.slice(0, -1);
+  if(!noNotesSelected) {
+    chordCombination = chordCombination.slice(0, -1);
+    getChord(chordCombination);
+  }
 }
 
+/**
+ * Función que genera un sombreado para resaltar la tecla (blanca) seleccionada
+ * y que establece dicha tecla como seleccionada en el array de booleanos
+ * @param key (la tecla)
+ * @param isSelected (el elemento del array de teclas seleccionadas que coincide con la tecla)
+ * @param sound (el sonido que se generará al tocar una tecla)
+ * @returns un valor booleano según si se ha seleccionado la tecla o deseleccionado.
+ */
 function highlightWhiteKey(key, isSelected, sound) {
   if (isSelected) {
     key.style.boxShadow = "none";
@@ -21,6 +100,14 @@ function highlightWhiteKey(key, isSelected, sound) {
   return isSelected;
 }
 
+/**
+ * Función que cambia el color de la tecla (negra) seleccionada
+ * y que establece dicha tecla como seleccionada en el array de booleanos
+ * @param key (la tecla)
+ * @param isSelected (el elemento del array de teclas seleccionadas que coincide con la tecla)
+ * @param sound (el sonido que se generará al tocar una tecla)
+ * @returns un valor booleano según si se ha seleccionado la tecla o deseleccionado.
+ */
 function highlightBlackKey(key, isSelected, sound) {
   if (isSelected) {
     key.style.backgroundColor = "black";
@@ -35,6 +122,11 @@ function highlightBlackKey(key, isSelected, sound) {
   return isSelected;
 }
 
+/**
+ * Función que carga un array vacío con diferentes audios de notas musicales
+ * @param tiles (array de teclas)
+ * @returns el array cargado
+ */
 function loadSounds(tiles) {
   tiles[0] = new Audio("../audio/F2.mp3");
   tiles[1] = new Audio("../audio/Gb2.mp3");
@@ -57,18 +149,24 @@ function loadSounds(tiles) {
 }
 
 window.onload = function () {
+  // Arrays para teclas blancas y negras
   let whiteTiles = document.getElementsByClassName("white");
   let blackTiles = document.getElementsByClassName("black");
 
+  /* El array "selectedTiles" contiene valores booleanos que indican si 
+  cierta tecla está seleccionada en el momento o no */
   let selectedTiles = new Array(17);
-  let tileSounds = new Array(17);
-  tileSounds = loadSounds(tileSounds);
-
+  // Por defecto, todas las teclas estarán sin seleccionar
   for (let i = 0; i < selectedTiles.length; i++) {
     selectedTiles[i] = false;
   }
 
-  // Tile Event Listeners
+  // El array "tileSounds" contiene los sonidos de cada una de las notas del piano
+  let tileSounds = new Array(17);
+  // Se carga el array
+  tileSounds = loadSounds(tileSounds);
+
+  // Event Listeners de todas las teclas del piano del asistente
   whiteTiles[0].addEventListener("click", function () {
     selectedTiles[0] = highlightWhiteKey(whiteTiles[0], selectedTiles[0], tileSounds[0]);
   });
@@ -137,6 +235,7 @@ window.onload = function () {
     selectedTiles[16] = highlightWhiteKey(whiteTiles[9], selectedTiles[16], tileSounds[16]);
   });
 
+  // Función que controla el mecanismo de mostrar los nombres de las notas
   let noteSwitch = document.getElementsByName("switch")[0];
   noteSwitch.addEventListener("click", function() {
     let noteNames = document.getElementsByClassName("note-name");
@@ -151,11 +250,14 @@ window.onload = function () {
     }
   });
 
+  /* Función que controla el evento de "click" sobre el botón principal del asistente que inicia
+  el procesamiento del acorde */
   let chordButton = document.querySelector("#chordButton");
   chordButton.addEventListener("click", function() {
     processChord(selectedTiles);
   });
 
+  // Función que controla el reseteo de teclas seleccionadas
   let resetButton = document.querySelector("#resetButton");
   resetButton.addEventListener("click", function() {
     for(let i = 0; i < whiteTiles.length; i++) {
@@ -169,6 +271,7 @@ window.onload = function () {
     }
   });
 
+  // Función que mutea / desmutea el audio al seleccionar teclas en el piano. El icono de sonido cambia.
   let volumeButton = document.querySelector("#volumeButton");
   volumeButton.addEventListener("click", function() {
     console.log(volumeButton.src.search("on.svg"));
