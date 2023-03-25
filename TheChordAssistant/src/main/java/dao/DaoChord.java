@@ -26,7 +26,7 @@ public class DaoChord {
 		return instance;
 	}
 
-	private ArrayList<Chord> listAll(String nameFilter) throws SQLException {
+	private ArrayList<Chord> listAll(int idFilter) throws SQLException {
 		PreparedStatement ps = con.prepareStatement("SELECT * FROM chords");
 		ResultSet rs = ps.executeQuery();
 
@@ -36,8 +36,10 @@ public class DaoChord {
 			if (result == null) {
 				result = new ArrayList<>();
 			}
-			if (nameFilter == null || rs.getString("name").equals(nameFilter)) {
-				result.add(new Chord(rs.getInt("id"), rs.getString("name"), rs.getString("quality"), rs.getString("description"), rs.getString("image"), rs.getString("featuredSong")));
+			if (idFilter == 0 || rs.getInt("id") == idFilter) {
+				result.add(new Chord(rs.getInt("id"), rs.getString("name"), rs.getString("quality"),
+						rs.getString("description"), rs.getString("image"), rs.getString("featuredSong"),
+						rs.getString("scale1"), rs.getString("scale2"), rs.getString("scale3")));
 			}
 		}
 
@@ -47,14 +49,14 @@ public class DaoChord {
 	public String getJson() throws SQLException {
 		String json = "";
 		Gson gson = new Gson();
-		json = gson.toJson(listAll(null));
+		json = gson.toJson(listAll(0));
 		return json;
 	}
 
-	public String getJson(String nameFilter) throws SQLException {
+	public String getJson(int idFliter) throws SQLException {
 		String json = "";
 		Gson gson = new Gson();
-		json = gson.toJson(listAll(nameFilter));
+		json = gson.toJson(listAll(idFliter));
 		return json;
 	}
 

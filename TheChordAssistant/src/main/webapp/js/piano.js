@@ -4,20 +4,41 @@ function generateChordPage(data) {
   chordPage.style.display = "block";
   let footer = document.querySelector("footer");
   footer.style.display = "flex";
+  
+  let chordName = document.querySelector("#chord-name");
+  chordName.innerHTML = data[0].name;
 
-  let description = document.querySelector("#chord-description")
+  let description = document.querySelector("#chord-description");
+  description.innerHTML = data[0].description;
 
   let chordImage = document.querySelector("#chord-image");
   chordImage.src = "./resources/img/chords/fundamentals/" + data[0].image;
+  
+  let variationsTitle = document.querySelector("#variations-title");
+  variationsTitle.innerHTML = "VARIACIONES DE " + data[0].name;
 
   let firstInversion = document.querySelector("#first-inversion");
   firstInversion.src = "./resources/img/chords/first_inversions/" + data[0].image;
 
   let secondInversion = document.querySelector("#second-inversion");
   secondInversion.src = "./resources/img/chords/second_inversions/" + data[0].image;
+  
+  let songTitle = document.querySelector("#songs-title");
+  songTitle.innerHTML = "CANCIÓN DESTACADA CON " + data[0].name;
 
   let song = document.querySelector("#song");
-  song.innerHTML = "<iframe id='song' style='border-radius:12px' src='" + data[0].featuredSong + "' width='50%' height='352' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'>";
+  song.innerHTML = "<iframe id='song' style='border-radius:12px' src='https://open.spotify.com/embed/track/" + data[0].featuredSong + "?utm_source=generator' width='50%' height='352' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'>";
+  
+  let scaleTitles = document.getElementsByClassName("scale-title");
+  scaleTitles[0].innerHTML = (data[0].scale1).replaceAll("_", " ");
+  scaleTitles[1].innerHTML = (data[0].scale2).replaceAll("_", " ");
+  scaleTitles[2].innerHTML = (data[0].scale3).replaceAll("_", " ");
+  
+  let scales = document.getElementsByClassName("scale");
+  scales[0].src = "./resources/img/scales/" + data[0].scale1 + ".png";
+  scales[1].src = "./resources/img/scales/" + data[0].scale2 + ".png";
+  scales[2].src = "./resources/img/scales/" + data[0].scale3 + ".png";
+  
 }
 
 // Función que realiza una petición ajax y pasa a la función "printData()" un JSON
@@ -35,53 +56,53 @@ function ajax(url) {
  */
 function getChord(num) {
   if(num == "0_4_7" || num == "4_7_12" || num == "0_7_16") {
-    ajax("List?name=" + "F"); // F
+    ajax("List?id=" + 6); // F
   } else if(num == "0_3_7" || num == "3_7_12" || num == "7_12_15" || num == "0_7_15") {
-    ajax("List?name=" + "Fm"); // Fm
+    ajax("List?id=" + 18); // Fm
   } else if(num == "1_5_8" || num == "5_8_13") {
-    ajax("List?name=" + "F# / Gb"); // F#
+    ajax("List?id=" + 7); // F#
   } else if(num == "1_4_8" || num == "4_8_13" || num == "1_8_16" || num == "8_13_16") {
-    ajax("List?name=" + "F#m / Gbm"); // F#m
+    ajax("List?id=" + 19); // F#m
   } else if(num == "2_6_9" || num == "6_9_14") {
-    ajax("List?name=" + "G"); // G
+    ajax("List?id=" + 8); // G
   } else if(num == "2_5_9" || num == "5_9_14") {
-    ajax("List?name=" + "Gm"); // Gm
+    ajax("List?id=" + 20); // Gm
   } else if(num == "3_7_10" || num == "7_10_15") {
-    ajax("List?name=" + "G# / Ab"); // G#
+    ajax("List?id=" + 9); // G#
   } else if(num == "3_6_10" || num == "6_10_15") {
-    ajax("List?name=" + "G#m / Abm"); // G#m
+    ajax("List?id=" + 21); // G#m
   } else if(num == "4_8_11" || num == "8_11_16") {
-    ajax("List?name=" + "A"); // A
+    ajax("List?id=" + 10); // A
   } else if(num == "4_7_11" || num == "7_11_16") {
-    ajax("List?name=" + "Am"); // Am
+    ajax("List?id=" + 22); // Am
   } else if(num == "5_9_12" || num == "0_5_9") {
-    ajax("List?name=" + "A# / Bb"); // A#
+    ajax("List?id=" + 11); // A#
   } else if(num == "5_8_12" || num == "0_5_8") {
-    ajax("List?name=" + "A#m // Bbm"); // A#m
+    ajax("List?id=" + 23); // A#m
   } else if(num == "6_10_13" || num == "1_6_10") {
-    ajax("List?name=" + "B"); // B
+    ajax("List?id=" + 12); // B
   } else if(num == "6_9_13" || num == "1_6_9") {
-    ajax("List?name=" + "Bm"); // Bm
+    ajax("List?id=" + 24); // Bm
   } else if(num == "7_11_14" || num == "2_7_11") {
-    ajax("List?name=" + "C"); // C
+    ajax("List?id=" + 1); // C
   } else if(num == "7_10_14" || num == "2_7_10") {
-    ajax("List?name=" + "Cm"); // Cm
+    ajax("List?id=" + 13); // Cm
   } else if(num == "8_12_15" || num == "0_8_15" || num == "3_8_12" || num == "0_3_8") {
-    ajax("List?name=" + "C# / Db"); // C#
+    ajax("List?id=" + 2); // C#
   } else if(num == "8_11_15" || num == "3_8_11") {
-    ajax("List?name=" + "C#m / Dbm"); // C#m
+    ajax("List?id=" + 14); // C#m
   } else if(num == "9_13_16" || num == "4_9_13" || num == "1_4_9" || num == "1_9_16") {
-    ajax("List?name=" + "D"); // D
+    ajax("List?id=" + 3); // D
   } else if(num == "9_12_16" || num == "4_9_12" || num == "0_4_9" || num == "0_9_16") {
-    ajax("List?name=" + "Dm"); // Dm
+    ajax("List?id=" + 15); // Dm
   } else if(num == "5_10_14" || num == "2_5_10") {
-    ajax("List?name=" + "D# / Eb"); // D#
+    ajax("List?id=" + 4); // D#
   } else if(num == "5_10_13" || num == "1_5_10") {
-    ajax("List?name=" + "D#m / Ebm"); // D#m
+    ajax("List?id=" + 16); // D#m
   } else if(num == "6_11_15" || num == "3_6_11") {
-    ajax("List?name=" + "E"); // E
+    ajax("List?id=" + 5); // E
   } else if(num == "2_6_11" || num == "6_11_14") {
-    ajax("List?name=" + "Em"); // Em
+    ajax("List?id=" + 17); // Em
   } else {
     window.alert("Acorde no reconocido...\nPrueba con una triada mayor o menor.") // Else
   }

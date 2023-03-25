@@ -30,15 +30,15 @@ public class List extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String name = request.getParameter("name");
+		int id = Integer.parseInt(request.getParameter("id"));
 		String json;
 
 		try {
 
-			if (name == null) {
+			if (id == 0) {
 				json = DaoChord.getInstance().getJson();
 			} else {
-				json = DaoChord.getInstance().getJson(name);
+				json = DaoChord.getInstance().getJson(id);
 			}
 
 			PrintWriter output = response.getWriter();
