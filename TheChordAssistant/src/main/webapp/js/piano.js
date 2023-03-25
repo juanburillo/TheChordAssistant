@@ -1,5 +1,6 @@
 // Función que genera una página dinámica dependiendo del acorde introducido
 function generateChordPage(data) {
+	console.log(data);
   let chordPage = document.querySelector("#chord-page");
   chordPage.style.display = "block";
   let footer = document.querySelector("footer");
