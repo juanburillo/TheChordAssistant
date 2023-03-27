@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TheChordAssistant &#183; Foro</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/general.css">
+  <link rel="stylesheet" href="./css/forum.css">
+  <!-- Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Secular+One&family=Unbounded&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-  
+
+  <header>
+    <h1 id="title"><a href="../index.html">TheChordAssistant</a></h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="./assistant.html">Asistente</a></li>
+        <li><a href="./MostrarForo.html">Foro</a></li>
+        <li id="acceder"><a href="./Iniciar.html">Cerrar Sesion</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <form name="forum" action="Forum" method="post" enctype="multipart/form-data">
+    <div class="container">
+      <div class="post">
+        <div class="centro">
+          <input class="texto1" type="text" id="Titulo" name="titulo" required>
+          <input class="foto2" type="file" id="Foto" name="foto" required>
+          <input class="texto2" type="text" id="Descripcion" name="contenido" required>
+          <input type="submit" value="Guardar">
+        </div>
+      </div>
+    </div>
+  </form>
+
 </body>
+
 </html>

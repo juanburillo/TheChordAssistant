@@ -1,0 +1,64 @@
+.container {
+	max-width: 1400px;
+	padding: 40px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.post {
+	display: flex;
+	margin-bottom: 40px;
+	border: 1px solid #000000;
+	padding: 20px;
+	width: 1400px;
+}
+
+.post img {
+	margin-right: 20px;
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+}
+
+.post h2 {
+	margin: 0;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.post p {
+	margin: 10px 0;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.tituloforo {
+    text-align: center;
+}
+
+.foto{
+    border-radius: 50%;
+}
+
+.centro{
+	text-align: center;
+}
+
+.foto2{
+	margin: 0%;
+}
+
+.texto1{
+	margin-left: 100px;
+}
+
+.texto2{
+	margin-top: 20px;
+	padding-left: 1100px;
+	padding-bottom: 60px;
+}
+
+.passwordwrong{
+	padding-top: 60px;
+	padding-left: 550px;
+}

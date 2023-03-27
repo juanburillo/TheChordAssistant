@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" version="5.0">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="5.0">
   <servlet>
     <description></description>
     <display-name>List</display-name>
@@ -19,4 +19,64 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>AltaUsuario</display-name>
+    <servlet-name>AltaUsuario</servlet-name>
+    <servlet-class>controller.AltaUsuario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AltaUsuario</servlet-name>
+    <url-pattern>/AltaUsuario</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BorrarPost</display-name>
+    <servlet-name>BorrarPost</servlet-name>
+    <servlet-class>controller.BorrarPost</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BorrarPost</servlet-name>
+    <url-pattern>/BorrarPost</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BorrarUser</display-name>
+    <servlet-name>BorrarUser</servlet-name>
+    <servlet-class>controller.BorrarUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BorrarUser</servlet-name>
+    <url-pattern>/BorrarUser</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Foro</display-name>
+    <servlet-name>Foro</servlet-name>
+    <servlet-class>controller.Foro</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Foro</servlet-name>
+    <url-pattern>/Foro</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Forum</display-name>
+    <servlet-name>Forum</servlet-name>
+    <servlet-class>controller.Forum</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Forum</servlet-name>
+    <url-pattern>/Forum</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Inicio</display-name>
+    <servlet-name>Inicio</servlet-name>
+    <servlet-class>controller.Inicio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Inicio</servlet-name>
+    <url-pattern>/Inicio</url-pattern>
+  </servlet-mapping>
 </web-app>

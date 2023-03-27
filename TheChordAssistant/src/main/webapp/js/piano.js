@@ -1,11 +1,11 @@
 // Función que genera una página dinámica dependiendo del acorde introducido
 function generateChordPage(data) {
-	console.log(data);
+  console.log(data);
   let chordPage = document.querySelector("#chord-page");
   chordPage.style.display = "block";
   let footer = document.querySelector("footer");
   footer.style.display = "flex";
-  
+
   let chordName = document.querySelector("#chord-name");
   chordName.innerHTML = data[0].name;
 
@@ -14,46 +14,50 @@ function generateChordPage(data) {
 
   let chordImage = document.querySelector("#chord-image");
   chordImage.src = "./resources/img/chords/fundamentals/" + data[0].image;
-  
+
   let variationsTitle = document.querySelector("#variations-title");
   variationsTitle.innerHTML = "VARIACIONES DE " + data[0].name;
 
   let firstInversion = document.querySelector("#first-inversion");
-  firstInversion.src = "./resources/img/chords/first_inversions/" + data[0].image;
+  firstInversion.src =
+    "./resources/img/chords/first_inversions/" + data[0].image;
 
   let secondInversion = document.querySelector("#second-inversion");
-  secondInversion.src = "./resources/img/chords/second_inversions/" + data[0].image;
-  
+  secondInversion.src =
+    "./resources/img/chords/second_inversions/" + data[0].image;
+
   let songTitle = document.querySelector("#songs-title");
   songTitle.innerHTML = "CANCIÓN DESTACADA CON " + data[0].name;
 
   let song = document.querySelector("#song");
-  song.innerHTML = "<iframe id='song' style='border-radius:12px' src='https://open.spotify.com/embed/track/" + data[0].featuredSong + "?utm_source=generator' width='50%' height='352' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'>";
-  
+  song.innerHTML =
+    "<iframe id='song' style='border-radius:12px' src='https://open.spotify.com/embed/track/" +
+    data[0].featuredSong +
+    "?utm_source=generator' width='50%' height='352' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'>";
+
   let scaleTitles = document.getElementsByClassName("scale-title");
-  scaleTitles[0].innerHTML = (data[0].scale1).replaceAll("_", " ");
-  scaleTitles[1].innerHTML = (data[0].scale2).replaceAll("_", " ");
-  scaleTitles[2].innerHTML = (data[0].scale3).replaceAll("_", " ");
-  
+  scaleTitles[0].innerHTML = data[0].scale1.replaceAll("_", " ");
+  scaleTitles[1].innerHTML = data[0].scale2.replaceAll("_", " ");
+  scaleTitles[2].innerHTML = data[0].scale3.replaceAll("_", " ");
+
   let scales = document.getElementsByClassName("scale");
   scales[0].src = "./resources/img/scales/" + data[0].scale1 + ".png";
   scales[1].src = "./resources/img/scales/" + data[0].scale2 + ".png";
   scales[2].src = "./resources/img/scales/" + data[0].scale3 + ".png";
-  
 }
 
 // Función que realiza una petición ajax y pasa a la función "printData()" un JSON
 function ajax(url) {
   fetch(url)
-  .then(data => data.json())
-  .then(data => generateChordPage(data));
+    .then((data) => data.json())
+    .then((data) => generateChordPage(data));
 }
 
 /**
  * Función que, según la combinación de teclas del piano que se le pase por parámetro,
  * TODO
  * @param num (número con la combinación de teclas. Por ejemplo, "0_1_2" significa que
- * las tres primeras teclas han sido seleccionadas) 
+ * las tres primeras teclas han sido seleccionadas)
  */
 function getChord(num) {
   if(num == "0_4_7" || num == "4_7_12" || num == "0_7_16") {
@@ -117,7 +121,7 @@ function getChord(num) {
  */
 function processChord(tiles) {
   let chordCombination = "";
-  let noNotesSelected = true; 
+  let noNotesSelected = true;
   for (let i = 0; i < tiles.length; i++) {
     if (tiles[i]) {
       chordCombination += i + "_";
@@ -125,7 +129,7 @@ function processChord(tiles) {
     }
   }
 
-  if(!noNotesSelected) {
+  if (!noNotesSelected) {
     chordCombination = chordCombination.slice(0, -1);
     getChord(chordCombination);
   }
@@ -219,83 +223,151 @@ window.onload = function () {
 
   // Event Listeners de todas las teclas del piano del asistente
   whiteTiles[0].addEventListener("click", function () {
-    selectedTiles[0] = highlightWhiteKey(whiteTiles[0], selectedTiles[0], tileSounds[0]);
+    selectedTiles[0] = highlightWhiteKey(
+      whiteTiles[0],
+      selectedTiles[0],
+      tileSounds[0]
+    );
   });
 
   blackTiles[0].addEventListener("click", function () {
-    selectedTiles[1] = highlightBlackKey(blackTiles[0], selectedTiles[1], tileSounds[1]);
+    selectedTiles[1] = highlightBlackKey(
+      blackTiles[0],
+      selectedTiles[1],
+      tileSounds[1]
+    );
   });
 
   whiteTiles[1].addEventListener("click", function () {
-    selectedTiles[2] = highlightWhiteKey(whiteTiles[1], selectedTiles[2], tileSounds[2]);
+    selectedTiles[2] = highlightWhiteKey(
+      whiteTiles[1],
+      selectedTiles[2],
+      tileSounds[2]
+    );
   });
 
   blackTiles[1].addEventListener("click", function () {
-    selectedTiles[3] = highlightBlackKey(blackTiles[1], selectedTiles[3], tileSounds[3]);
+    selectedTiles[3] = highlightBlackKey(
+      blackTiles[1],
+      selectedTiles[3],
+      tileSounds[3]
+    );
   });
 
   whiteTiles[2].addEventListener("click", function () {
-    selectedTiles[4] = highlightWhiteKey(whiteTiles[2], selectedTiles[4], tileSounds[4]);
+    selectedTiles[4] = highlightWhiteKey(
+      whiteTiles[2],
+      selectedTiles[4],
+      tileSounds[4]
+    );
   });
 
   blackTiles[2].addEventListener("click", function () {
-    selectedTiles[5] = highlightBlackKey(blackTiles[2], selectedTiles[5], tileSounds[5]);
+    selectedTiles[5] = highlightBlackKey(
+      blackTiles[2],
+      selectedTiles[5],
+      tileSounds[5]
+    );
   });
 
   whiteTiles[3].addEventListener("click", function () {
-    selectedTiles[6] = highlightWhiteKey(whiteTiles[3], selectedTiles[6], tileSounds[6]);
+    selectedTiles[6] = highlightWhiteKey(
+      whiteTiles[3],
+      selectedTiles[6],
+      tileSounds[6]
+    );
   });
 
-  whiteTiles[4].addEventListener("click", function() {
-    selectedTiles[7] = highlightWhiteKey(whiteTiles[4], selectedTiles[7], tileSounds[7]);
+  whiteTiles[4].addEventListener("click", function () {
+    selectedTiles[7] = highlightWhiteKey(
+      whiteTiles[4],
+      selectedTiles[7],
+      tileSounds[7]
+    );
   });
 
   blackTiles[3].addEventListener("click", function () {
-    selectedTiles[8] = highlightBlackKey(blackTiles[3], selectedTiles[8], tileSounds[8]);
+    selectedTiles[8] = highlightBlackKey(
+      blackTiles[3],
+      selectedTiles[8],
+      tileSounds[8]
+    );
   });
 
-  whiteTiles[5].addEventListener("click", function() {
-    selectedTiles[9] = highlightWhiteKey(whiteTiles[5], selectedTiles[9], tileSounds[9]);
+  whiteTiles[5].addEventListener("click", function () {
+    selectedTiles[9] = highlightWhiteKey(
+      whiteTiles[5],
+      selectedTiles[9],
+      tileSounds[9]
+    );
   });
 
   blackTiles[4].addEventListener("click", function () {
-    selectedTiles[10] = highlightBlackKey(blackTiles[4], selectedTiles[10], tileSounds[10]);
+    selectedTiles[10] = highlightBlackKey(
+      blackTiles[4],
+      selectedTiles[10],
+      tileSounds[10]
+    );
   });
 
-  whiteTiles[6].addEventListener("click", function() {
-    selectedTiles[11] = highlightWhiteKey(whiteTiles[6], selectedTiles[11], tileSounds[11]);
+  whiteTiles[6].addEventListener("click", function () {
+    selectedTiles[11] = highlightWhiteKey(
+      whiteTiles[6],
+      selectedTiles[11],
+      tileSounds[11]
+    );
   });
 
-  whiteTiles[7].addEventListener("click", function() {
-    selectedTiles[12] = highlightWhiteKey(whiteTiles[7], selectedTiles[12], tileSounds[12]);
+  whiteTiles[7].addEventListener("click", function () {
+    selectedTiles[12] = highlightWhiteKey(
+      whiteTiles[7],
+      selectedTiles[12],
+      tileSounds[12]
+    );
   });
 
   blackTiles[5].addEventListener("click", function () {
-    selectedTiles[13] = highlightBlackKey(blackTiles[5], selectedTiles[13], tileSounds[13]);
+    selectedTiles[13] = highlightBlackKey(
+      blackTiles[5],
+      selectedTiles[13],
+      tileSounds[13]
+    );
   });
 
-  whiteTiles[8].addEventListener("click", function() {
-    selectedTiles[14] = highlightWhiteKey(whiteTiles[8], selectedTiles[14], tileSounds[14]);
+  whiteTiles[8].addEventListener("click", function () {
+    selectedTiles[14] = highlightWhiteKey(
+      whiteTiles[8],
+      selectedTiles[14],
+      tileSounds[14]
+    );
   });
 
   blackTiles[6].addEventListener("click", function () {
-    selectedTiles[15] = highlightBlackKey(blackTiles[6], selectedTiles[15], tileSounds[15]);
+    selectedTiles[15] = highlightBlackKey(
+      blackTiles[6],
+      selectedTiles[15],
+      tileSounds[15]
+    );
   });
 
-  whiteTiles[9].addEventListener("click", function() {
-    selectedTiles[16] = highlightWhiteKey(whiteTiles[9], selectedTiles[16], tileSounds[16]);
+  whiteTiles[9].addEventListener("click", function () {
+    selectedTiles[16] = highlightWhiteKey(
+      whiteTiles[9],
+      selectedTiles[16],
+      tileSounds[16]
+    );
   });
 
   // Función que controla el mecanismo de mostrar los nombres de las notas
   let noteSwitch = document.getElementsByName("switch")[0];
-  noteSwitch.addEventListener("click", function() {
+  noteSwitch.addEventListener("click", function () {
     let noteNames = document.getElementsByClassName("note-name");
-    if(noteSwitch.checked) {
-      for(let i = 0; i < noteNames.length; i++) {
+    if (noteSwitch.checked) {
+      for (let i = 0; i < noteNames.length; i++) {
         noteNames[i].style.display = "inline";
       }
     } else {
-      for(let i = 0; i < noteNames.length; i++) {
+      for (let i = 0; i < noteNames.length; i++) {
         noteNames[i].style.display = "none";
       }
     }
@@ -304,44 +376,43 @@ window.onload = function () {
   /* Función que controla el evento de "click" sobre el botón principal del asistente que inicia
   el procesamiento del acorde */
   let chordButton = document.querySelector("#chordButton");
-  chordButton.addEventListener("click", function() {
+  chordButton.addEventListener("click", function () {
     processChord(selectedTiles);
   });
 
   // Función que controla el reseteo de teclas seleccionadas
   let resetButton = document.querySelector("#resetButton");
-  resetButton.addEventListener("click", function() {
-    for(let i = 0; i < whiteTiles.length; i++) {
+  resetButton.addEventListener("click", function () {
+    for (let i = 0; i < whiteTiles.length; i++) {
       whiteTiles[i].style.boxShadow = "none";
     }
-    for(let i = 0; i < blackTiles.length; i++) {
+    for (let i = 0; i < blackTiles.length; i++) {
       blackTiles[i].style.backgroundColor = "black";
     }
-    for(let i = 0; i < selectedTiles.length; i++) {
+    for (let i = 0; i < selectedTiles.length; i++) {
       selectedTiles[i] = false;
     }
   });
 
   // Función que mutea / desmutea el audio al seleccionar teclas en el piano. El icono de sonido cambia.
   let volumeButton = document.querySelector("#volumeButton");
-  volumeButton.addEventListener("click", function() {
+  volumeButton.addEventListener("click", function () {
     console.log(volumeButton.src.search("on.svg"));
     if (volumeButton.src.search("on.svg") == -1) {
       volumeButton.src = "./resources/img/icons/volume-on.svg";
-      for(let i = 0; i < tileSounds.length; i++) {
+      for (let i = 0; i < tileSounds.length; i++) {
         tileSounds[i].muted = false;
       }
     } else {
       volumeButton.src = "./resources/img/icons/volume-off.svg";
-      for(let i = 0; i < tileSounds.length; i++) {
+      for (let i = 0; i < tileSounds.length; i++) {
         tileSounds[i].muted = true;
       }
     }
   });
-  
-  // TODO
-  document.querySelector("#goUp").addEventListener("click", function() {	  
-	  window.location.href = "#top";
-  });
 
+  // TODO
+  document.querySelector("#goUp").addEventListener("click", function () {
+    window.location.href = "#top";
+  });
 };

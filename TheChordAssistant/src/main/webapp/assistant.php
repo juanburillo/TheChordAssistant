@@ -5,34 +5,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>TheChordAssistant &#183; Asistente</title>
-  <!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="./resources/img/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="./resources/img/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="./resources/img/favicon//favicon-16x16.png">
-	<link rel="manifest" href="./resources/img/favicon//site.webmanifest">
+  <?php
+  include = "./includes/head.php"
+  ?>
   <!-- CSS -->
-  <link rel="stylesheet" href="./css/general.css">
   <link rel="stylesheet" href="./css/assistant.css">
   <link rel="stylesheet" href="./css/chordPage.css">
-  <!-- Fonts -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Secular+One&family=Unbounded&display=swap" rel="stylesheet">
   <!-- JS -->
   <script src="./js/piano.js"></script>
 </head>
 
 <body>
   <header>
-    <h1 id="title"><a href="./index.html">TheChordAssistant</a></h1>
-    <nav>
-      <ul>
-        <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./assistant.html">Asistente</a></li>
-        <li><a href="./forum.html">Foro</a></li>
-      </ul>
-    </nav>
+    <?php
+    include "./includes/header.php";
+    ?>
   </header>
 
   <main>
@@ -119,20 +106,9 @@
   </section>
 
   <footer>
-    <div id="logo">
-      <h2>TheChordAssistant</h2>
-      <p>&copy; 2023 TripleJ</p>
-    </div>
-
-    <div id="links">
-      <h3>Enlaces</h3>
-      <ul>
-        <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./assistant.html">Asistente</a></li>
-        <li><a href="./forum.html">Foro</a></li>
-        <li><a href="#">Iniciar Sesión</a></li>
-      </ul>
-    </div>
+    <?php
+    include "./includes/footer.php"
+    ?>
   </footer>
 </body>
 
