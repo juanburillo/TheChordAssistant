@@ -54,12 +54,12 @@ public class BorrarUser extends HttpServlet {
 			if (rowsDeleted > 0) {
 				// Si se eliminó el registro, mostrar un mensaje de éxito
 				response.getWriter().println("<h1>Usuario eliminado exitosamente</h1>");
-		        response.sendRedirect("OpcionesAdmin.html");
+		        response.sendRedirect("opcionesAdmin.html");
 			} else {
 				// Si no se eliminó el registro, mostrar un mensaje de error
 				System.out.print("No se encontro al usuario ");
 				System.out.println(id);
-		        response.sendRedirect("BajaUsuarios.html");
+		        response.sendRedirect("bajaUsuarios.html");
 			}
 			
 			// Cerrar la sentencia SQL
@@ -68,7 +68,7 @@ public class BorrarUser extends HttpServlet {
 		} catch (SQLException e) {
 			// Si ocurre un error al conectar o al eliminar el registro, mostrar un mensaje de error
 			System.out.println("Error de conexión.");
-	        response.sendRedirect("BajaUsuarios.html");
+	        response.sendRedirect("bajaUsuarios.html");
 			e.printStackTrace();
 		}
 	}

@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 import dao.DaoUser;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -38,7 +37,6 @@ public class AltaUsuarios extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	/**
@@ -47,23 +45,20 @@ public class AltaUsuarios extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);// Manda lo de served y el servidor de tomcat
-
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String email = request.getParameter("email");
 
 		User u = new User(username, password, email);
-		
+
 		try {
 			u.insert();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		response.sendRedirect("Login.html");
+
+		response.sendRedirect("login.html");
 
 	}
 

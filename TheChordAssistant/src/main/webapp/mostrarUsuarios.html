@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheChordAssistant &#183; Listado Usuarios</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./resources/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./resources/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./resources/img/favicon//favicon-16x16.png">
+  <link rel="manifest" href="./resources/img/favicon//site.webmanifest">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/general.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Secular+One&family=Unbounded&display=swap" rel="stylesheet">
+
+  <script type="text/javascript">
+    function llamada(Respuesta) {
+      fetch(Respuesta)
+        .then(response => response.json())
+        .then(data => pintarTabla(data))
+    }
+
+
+    function pintarTabla(datos) {
+      let tabla = "<h1 style='text-align: center'>Usuarios</h1><table style='border-collapse: collapse; width: 100%; text-align:center;'>";
+      tabla += "<thead style='background-color: #333; color: #fff;'><tr>";
+      tabla += "<th style='border: 1px solid #ddd; padding: 8px;'>Username</th>";
+      tabla += "<th style='border: 1px solid #ddd; padding: 8px;'>Email</th>";
+      tabla += "</tr></thead><tbody>";
+      for (let i = 0; i < datos.length; i++) {
+        tabla += "<tr>";
+        tabla += "<td style='border: 1px solid #ddd; padding: 8px;'>" + datos[i].username + "</td>";
+        tabla += "<td style='border: 1px solid #ddd; padding: 8px;'>" + datos[i].email + "</td>";
+        tabla += "</tr>";
+      }
+      tabla += "</tbody></table>";
+      document.querySelector('#lista').innerHTML = tabla;
+    }
+
+
+    window.onload = function () {
+      llamada("AltaUsuarios");
+    }
+  </script>
+</head>
+
+<body>
+  <div id="lista"></div>
+</body>
+
+</html>

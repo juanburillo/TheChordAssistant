@@ -36,16 +36,16 @@ public class DaoPost {
 
 	}
 
-	public ArrayList<User> getAll() throws SQLException {
+	public ArrayList<Post> getAll() throws SQLException {
 		PreparedStatement ps = con.prepareStatement("SELECT * FROM posts");
 		ResultSet rs = ps.executeQuery();
-		ArrayList<User> result = null;
+		ArrayList<Post> result = null;
 
 		while (rs.next()) {
 			if (result == null) {
 				result = new ArrayList<>();
 			}
-			result.add(new User(rs.getString("titulo"), rs.getString("contenido"), rs.getString("foto")));
+			result.add(new Post(rs.getString("titulo"), rs.getString("contenido"), rs.getString("foto")));
 		}
 		rs.close();
 		ps.close();
@@ -54,7 +54,7 @@ public class DaoPost {
 
 	public String getJson() throws SQLException {
 		Gson gson = new Gson();
-		String json = gson.toJson(this.getAll());
+		String json = gson.toJson(getAll());
 		return json;
 	}
 }

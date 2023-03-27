@@ -79,4 +79,14 @@
     <servlet-name>Inicio</servlet-name>
     <url-pattern>/Inicio</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AltaUsuarios</display-name>
+    <servlet-name>AltaUsuarios</servlet-name>
+    <servlet-class>controller.AltaUsuarios</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AltaUsuarios</servlet-name>
+    <url-pattern>/AltaUsuarios</url-pattern>
+  </servlet-mapping>
 </web-app>

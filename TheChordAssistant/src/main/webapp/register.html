@@ -3,18 +3,44 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TheChordAssistant &#183; Registro</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./resources/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./resources/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./resources/img/favicon//favicon-16x16.png">
+  <link rel="manifest" href="./resources/img/favicon//site.webmanifest">
+  <!-- CSS -->
   <link rel="stylesheet" href="./css/general.css">
+  <link rel="stylesheet" href="./css/accounts.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Secular+One&family=Unbounded&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+  <header>
+    <h1 id="title"><a href="./index.html">TheChordAssistant</a></h1>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./assistant.html">Asistente</a></li>
+        <li><a href="./forum.html">Foro</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <div class="login-box">
     <h2>Crear Cuenta</h2>
-    <form name="AltaUsuarios" action="AltaUsuarios" method="post">
+    <form name="altaUsuarios" action="AltaUsuarios" method="post">
       <ul>
-        <li><label>Nombre de Usuario:</label><input type="text" id="nombre" name="username" required max="32"></li>
-        <li><label>Contraseña:</label><input type="password" id="password" name="password" required max="64"></li>
+        <li><label>Nombre de Usuario:</label><input type="text" id="nombre" name="username" required min="3" max="32"></li>
+        <li><label>Contraseña:</label><input type="password" id="password" name="password" required min="6" max="64"></li>
         <li><label>Correo Electrónico:</label><input type="email" id="email" name="email" required></li>
       </ul>
         
@@ -23,6 +49,22 @@
       <a href="login.html">Tengo Cuenta</a>
     </form>
   </div>
+
+  <footer>
+    <div id="logo">
+      <h2>TheChordAssistant</h2>
+      <p>&copy; 2023 TripleJ</p>
+    </div>
+    
+    <div id="links">
+      <h3>Enlaces</h3>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./assistant.html">Asistente</a></li>
+        <li><a href="./forum.html">Foro</a></li>
+      </ul>
+    </div>
+  </footer>
 
 </body>
 

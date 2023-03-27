@@ -1,0 +1,40 @@
+footer {
+	margin-top: auto;
+	display: flex;
+	height: 160px;
+	background-color: black;
+  color: white;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+#logo h2 {
+  font-family: 'Unbounded', sans-serif;
+}
+
+#logo p {
+  font-family: 'Prompt', sans-serif;
+}
+
+#links h3 {
+  text-decoration: underline;
+}
+
+#links li {
+  list-style: none;
+}
+
+#links a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#links a:hover {
+  text-decoration: underline;
+}
+
+#links a:active {
+  opacity: 0.8;
+}

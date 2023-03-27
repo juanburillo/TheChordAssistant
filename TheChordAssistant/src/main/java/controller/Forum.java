@@ -20,7 +20,7 @@ import jakarta.servlet.http.Part;
 import model.Post;
 
 /**
- * Servlet implementation class Foro
+ * Servlet implementation class Forum
  */
 @MultipartConfig
 public class Forum extends HttpServlet {
@@ -77,7 +77,7 @@ public class Forum extends HttpServlet {
 		Post p = new Post(titulo, contenido, ruta);
 		try {
 			p.insert();
-			response.sendRedirect("MostrarForo.html");
+			response.sendRedirect("forum.html");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

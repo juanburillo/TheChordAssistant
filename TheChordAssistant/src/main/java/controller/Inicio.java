@@ -43,7 +43,7 @@ public class Inicio extends HttpServlet {
 			throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-
+		
 		try {
 			Connection connection = DBConnection.getConnection();
 			String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
@@ -54,16 +54,16 @@ public class Inicio extends HttpServlet {
 
 			if (result.next()) {
 				if (username.equals("admin") && password.equals("admin")) {
-					response.sendRedirect("OpcionesAdmin.html");
+					response.sendRedirect("opcionesAdmin.html");
 				} else {
-					response.sendRedirect("MostrarForo.html");
+					response.sendRedirect("forum.html");
 				}
 			} else {
-				response.sendRedirect("WrongPassword.html");
+				// Contraseña incorrecta
+				response.sendRedirect("forum.html");
 			}
 
 			statement.close();
-			connection.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

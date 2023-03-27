@@ -1,50 +1,96 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TheChordAssistant &#183; Foro</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./resources/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./resources/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./resources/img/favicon//favicon-16x16.png">
+  <link rel="manifest" href="./resources/img/favicon//site.webmanifest">
   <!-- CSS -->
   <link rel="stylesheet" href="./css/general.css">
   <link rel="stylesheet" href="./css/forum.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
   <!-- Fonts -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Secular+One&family=Unbounded&display=swap"
     rel="stylesheet">
+
+  <script type="text/javascript">
+    function llamada(Respuesta) {
+      fetch(Respuesta)
+        .then(response => response.json())
+        .then(data => pintarTabla(data))
+    }
+
+
+    function pintarTabla(datos) {
+      if (datos != undefined) {
+        let tabla = "<div class='container'>";
+        for (let i = 0; i < datos.length; i++) {
+          tabla += "<div class='post'>";
+          tabla += "<img src='./fotos/" + datos[i].foto + "' class='foto'>";
+          tabla += "<div>";
+          tabla += "<h2 class='tituloforo'>" + datos[i].titulo + "</h2>";
+          tabla += "<p>" + datos[i].contenido + "</p>";
+          tabla += "</div>";
+          tabla += "</div>";
+        }
+        tabla += "</div>";
+        document.querySelector('#lista').innerHTML = tabla;
+      } else {
+        let mensaje = "<h2>Parece que el foro está vacío...</h2>";
+        mensaje += "<a href='crearPost.html'>Haz click aquí para publicar un post.</a>"; 
+        document.querySelector("#lista").innerHTML = mensaje;
+      }
+
+    }
+
+
+    window.onload = function () {
+      llamada("Forum");
+    }
+
+  </script>
 </head>
 
 <body>
-
   <header>
-    <h1 id="title"><a href="../index.html">TheChordAssistant</a></h1>
+    <h1 id="title"><a href="./index.html">TheChordAssistant</a></h1>
     <nav>
       <ul>
-        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="./index.html">Inicio</a></li>
         <li><a href="./assistant.html">Asistente</a></li>
-        <li><a href="./MostrarForo.html">Foro</a></li>
-        <li id="acceder"><a href="./Iniciar.html">Cerrar Sesion</a></li>
+        <li><a href="./forum.html">Foro</a></li>
+        <li><a href="./crearPost.html">Subir Post</a></li>
       </ul>
     </nav>
   </header>
 
-  <form name="forum" action="Forum" method="post" enctype="multipart/form-data">
-    <div class="container">
-      <div class="post">
-        <div class="centro">
-          <input class="texto1" type="text" id="Titulo" name="titulo" required>
-          <input class="foto2" type="file" id="Foto" name="foto" required>
-          <input class="texto2" type="text" id="Descripcion" name="contenido" required>
-          <input type="submit" value="Guardar">
-        </div>
-      </div>
-    </div>
-  </form>
+  <div id="lista"></div>
 
+  <footer>
+    <div id="logo">
+      <h2>TheChordAssistant</h2>
+      <p>&copy; 2023 TripleJ</p>
+    </div>
+
+    <div id="links">
+      <h3>Enlaces</h3>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./assistant.html">Asistente</a></li>
+        <li><a href="./forum.html">Foro</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 
 </html>

@@ -1,0 +1,50 @@
+header {
+  height: 70px;
+  background-color: black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#title {
+  font-family: "Unbounded";
+  font-weight: 400;
+  font-size: 2rem;
+  margin-right: auto;
+  margin-left: 40px;
+}
+
+#title a {
+  color: var(--bg);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+nav ul {
+  list-style: none;
+  margin-right: 200px;
+}
+
+nav li {
+  font-family: "Prompt";
+  font-weight: 400;
+  font-size: 1.2rem;
+  display: inline-block;
+  padding: 0 50px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: var(--bg);
+  transition: opacity 0.3s;
+}
+
+nav li a:hover,
+#title a:hover {
+  opacity: 0.8;
+}
+
+nav li a:active,
+#title a:active {
+  opacity: 0.6;
+}

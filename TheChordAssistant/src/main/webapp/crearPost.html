@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheChordAssistant &#183; Crear Post</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./resources/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./resources/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./resources/img/favicon//favicon-16x16.png">
+  <link rel="manifest" href="./resources/img/favicon//site.webmanifest">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/general.css">
+  <link rel="stylesheet" href="./css/crearPost.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Secular+One&family=Unbounded&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <h1 id="title"><a href="./index.html">TheChordAssistant</a></h1>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./assistant.html">Asistente</a></li>
+        <li><a href="./forum.html">Foro</a></li>
+        <li><a href="./login.html">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <form name="forum" action="Forum" method="post" enctype="multipart/form-data">
+  	<ul>
+  		<li><label>Título:</label><input type="text" id="titulo" name="titulo" required></li>
+  		<li><label>Foto:</label><input type="file" id="foto" name="foto" required accept="img/*"></li>
+  		<li><label>Contenido:</label><textarea type="text" id="contenido" name="contenido" required>Escribe aquí tu publicación.</textarea></li>
+  		<li><input type="submit" value="Enviar"></li>
+  	</ul>
+  </form>
+
+  <footer>
+    <div id="logo">
+      <h2>TheChordAssistant</h2>
+      <p>&copy; 2023 TripleJ</p>
+    </div>
+    
+    <div id="links">
+      <h3>Enlaces</h3>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./assistant.html">Asistente</a></li>
+        <li><a href="./forum.html">Foro</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+
+</html>
