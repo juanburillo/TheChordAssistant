@@ -55,7 +55,7 @@ function ajax(url) {
 
 /**
  * Función que, según la combinación de teclas del piano que se le pase por parámetro,
- * TODO
+ * envía una petición ajax para que se muestre la información sobre el acorde seleccionado
  * @param num (número con la combinación de teclas. Por ejemplo, "0_1_2" significa que
  * las tres primeras teclas han sido seleccionadas)
  */
@@ -411,7 +411,7 @@ window.onload = function () {
     }
   });
 
-  // TODO
+  // Función que redirige al usuario a la parte superior de la página
   document.querySelector("#goUp").addEventListener("click", function () {
     window.location.href = "#top";
   });
