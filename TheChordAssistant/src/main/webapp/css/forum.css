@@ -10,7 +10,7 @@ h2 {
 }
 
 .container {
-	max-width: 1400px;
+	min-width: 80%;
 	padding: 40px;
 	display: flex;
 	flex-wrap: wrap;
@@ -18,10 +18,12 @@ h2 {
 
 .post {
 	display: flex;
+	margin: auto;
 	margin-bottom: 40px;
-	border: 1px solid #000000;
+	background-color: white;
+	border-radius: 15px;
 	padding: 20px;
-	width: 1400px;
+	width: 100%;
 }
 
 .post img {
@@ -38,6 +40,7 @@ h2 {
 }
 
 .post p {
+	text-align: left;
 	margin: 10px 0;
 	font-size: 16px;
 	line-height: 1.5;
