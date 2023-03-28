@@ -1,91 +1,114 @@
 body {
-	text-align: center;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
-	margin-top: 40px;
+  margin-top: 40px;
 }
 
 .container {
-	min-width: 80%;
-	padding: 40px;
-	display: flex;
-	flex-wrap: wrap;
+  min-width: 80%;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .post {
-	display: flex;
-	margin: auto;
-	margin-bottom: 40px;
-	background-color: white;
-	border-radius: 15px;
-	padding: 20px;
-	width: 100%;
+  display: flex;
+  margin: auto;
+  margin-bottom: 40px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
 }
 
 .post img {
-	margin-right: 20px;
-	width: 100px;
-	height: 100px;
-	object-fit: cover;
+  margin-right: 20px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
 .post h2 {
-	margin: 0;
-	font-size: 24px;
-	font-weight: bold;
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .post p {
-	text-align: left;
-	margin: 10px 0;
-	font-size: 16px;
-	line-height: 1.5;
+  text-align: left;
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .tituloforo {
-    text-align: left;
+  text-align: left;
 }
 
-.foto{
-    border-radius: 50%;
+.foto {
+  border-radius: 50%;
 }
 
-.centro{
-	text-align: center;
+.centro {
+  text-align: center;
 }
 
-.foto2{
-	margin: 0%;
+.foto2 {
+  margin: 0%;
 }
 
-.texto1{
-	margin-left: 100px;
+.texto1 {
+  margin-left: 100px;
 }
 
-.texto2{
-	margin-top: 20px;
-	padding-left: 1100px;
-	padding-bottom: 60px;
+.texto2 {
+  margin-top: 20px;
+  padding-left: 1100px;
+  padding-bottom: 60px;
 }
 
-.passwordwrong{
-	padding-top: 60px;
-	padding-left: 550px;
+.passwordwrong {
+  padding-top: 60px;
+  padding-left: 550px;
 }
 
 a {
-	color: black;
-	transition: all 0.3s;
+  color: black;
+  transition: all 0.3s;
 }
 
 a:hover {
-	opacity: 0.8;
+  opacity: 0.8;
 }
 
 a:active {
-	opacity: 0.6;
+  opacity: 0.6;
+}
+
+.form {
+	color: white;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+	height: 300px;
+  background-color: black;
+  border-radius: 25px;
+	width: 50%;
+	margin: auto;
+  transition: 0.4s ease-in-out;
+}
+
+input {
+	margin: 20px 0;
+}
+
+ul li {
+	list-style: none;
 }

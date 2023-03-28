@@ -13,13 +13,15 @@
   <link rel="manifest" href="./resources/img/favicon//site.webmanifest">
   <!-- CSS -->
   <link rel="stylesheet" href="./css/general.css">
-  <link rel="stylesheet" href="./css/forum.css">
+  <link rel="stylesheet" href="./css/accounts.css">
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/footer.css">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Secular+One&family=Unbounded&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <body>
@@ -36,14 +38,36 @@
     </nav>
   </header>
 
-  <form name="forum" action="Forum" method="post" enctype="multipart/form-data">
-  	<ul>
-  		<li><label>Título:</label><input type="text" id="titulo" name="titulo" required></li>
-  		<li><label>Foto:</label><input type="file" id="foto" name="foto" required accept="img/*"></li>
-  		<li><label>Contenido:</label><textarea type="text" id="contenido" name="contenido" required>Escribe aquí tu publicación.</textarea></li>
-  		<li><input type="submit" value="Enviar"></li>
-  	</ul>
-  </form>
+  <div class="login-box"> 
+    <form class="form" name="forum" action="Forum" method="post" enctype="multipart/form-data">
+        <p class="heading">Crear Post</p>
+        <div class="field">
+          <span class="material-symbols-outlined">
+            title
+          </span>
+          <input type="text" id="titulo" class="input-field" placeholder="Título" name="titulo" required>
+        </div>
+        <div class="field">
+          <span class="material-symbols-outlined">
+            subtitles
+          </span>
+          <textarea type="text" id="contenido" name="contenido" required>Escribe aquí tu publicación.</textarea>
+        </div>
+        <div class="field">
+          <span class="material-symbols-outlined">
+            imagesmode
+          </span>
+          <input type="file" id="foto" class="input-field" placeholder="Foto" name="foto" required accept="img/*">
+        </div>
+        <div class="btn">
+          <input type="submit" class="button1" value="Enviar">
+        <button class="button2"><a href="register.html">Crear Cuenta</a></button>
+        </div>
+    </form>
+    </div>
+    
+  		
+  
 
   <footer>
     <div id="logo">
