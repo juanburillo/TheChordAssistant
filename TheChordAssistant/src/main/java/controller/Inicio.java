@@ -56,7 +56,7 @@ public class Inicio extends HttpServlet {
 				if (username.equals("admin") && password.equals("admin")) {
 					response.sendRedirect("opcionesAdmin.html");
 				} else {
-					response.sendRedirect("forum.html");
+					response.sendRedirect("forum2.html");
 				}
 			} else {
 				// Contraseña incorrecta

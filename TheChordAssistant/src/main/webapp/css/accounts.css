@@ -70,6 +70,7 @@ textarea {
 	color: white;
   font-family: "Prompt", sans-serif;
 	padding: 6px;
+	border-radius: 10px;
 }
 
 .button1 {
